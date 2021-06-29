@@ -1,0 +1,9 @@
+@Get4
+Feature: I am testing GET requests for getting ContainerItems record
+   
+   @sree4
+   Scenario: GET containerItems record
+        Given I Set GET containerItems service api endpoint
+        When I Set request HEADER content type as "application/json" to get containerItems
+        And Send a GET HTTP request to get containerItems
+        Then I receive valid HTTP response code 200 while fetching containerItems

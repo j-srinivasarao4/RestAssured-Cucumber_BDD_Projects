@@ -1,0 +1,9 @@
+@Get2
+Feature: I am testing GET requests for getting connectors record
+
+    @sree2
+    Scenario: GET connectors record
+        Given I Set GET connectors service api endpoint
+        When I Set request HEADER content type as "application/json" to get connectors
+        And Send a GET HTTP request to get connectors
+        Then I receive valid HTTP response code 200 while fetching connectors

@@ -1,0 +1,10 @@
+@Get1
+Feature: I am testing GET requests for getting provider records
+  
+  @sree1
+  Scenario: GET providers record        
+        Given I Set GET providers service api endpoint
+        When I Set request HEADER content type as "application/json" to get providers
+        And Send a GET HTTP request to get providers
+        Then I receive valid HTTP response code 200 while fetching providers
+       

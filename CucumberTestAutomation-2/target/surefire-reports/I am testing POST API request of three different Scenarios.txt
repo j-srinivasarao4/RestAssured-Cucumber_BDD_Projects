@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: I am testing POST API request of three different Scenarios
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.722 s <<< FAILURE! - in I am testing POST API request of three different Scenarios
+POST Sync Connector Containers|Poll & Verify Backup Completion(I am testing POST API request of three different Scenarios)  Time elapsed: 3.722 s  <<< ERROR!
+java.lang.IllegalArgumentException: 
+Don't know how to encode {"gender":"male","last_name":"Bapatla","salary":"20LPA","first_name":"Ravindra","email":"johnravi@gmail.com"} as a byte stream.
+
+Please use EncoderConfig (EncoderConfig#encodeContentTypeAs) to specify how to serialize data for this content-type.
+For example: "given().config(RestAssured.config().encoderConfig(encoderConfig().encodeContentTypeAs("application/json.", ContentType.TEXT))). .."
+

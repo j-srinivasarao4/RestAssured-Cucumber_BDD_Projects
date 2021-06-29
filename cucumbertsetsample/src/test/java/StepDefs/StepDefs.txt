@@ -1,0 +1,64 @@
+package StepDefs;
+
+
+import cucumber.api.Scenario;
+import cucumber.api.PendingException;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
+import cucumber.api.java.en.Then;
+import cucumber.api.junit.Cucumber;
+
+import org.junit.Assert;
+import org.junit.runner.RunWith;
+//import com.aventstack.extentreports.gherkin.model.Scenario;
+
+@RunWith(Cucumber.class)
+public class StepDefs {
+	int num1;
+	int num2;
+	int Result;
+	Scenario scn;
+	
+	
+	@Before
+	public void BeforeHook(Scenario s) {
+		this.scn = s;
+	}
+	
+	@After
+	public void AfterHook(Scenario s) {
+		scn.write("scn is completed with status as: " + scn.isFailed());
+		
+		}
+
+	@Given("I have to two numbers {int} and {int}")
+	public void i_have_to_two_numbers_and(Integer int1, Integer int2) {
+		num1 = int1;
+		num2 = int2;
+		scn.write("numbers to be added as  Num1 :" + num1 + "2nd number: " + num2);
+		
+	   
+	}
+
+	@When("I add these two numbers")
+	public void i_add_these_two_numbers() {
+	    Result = num1 + num2;
+	    scn.write("Numbers added the Result is : " + Result);
+	}
+
+	@Then("Result is {int}")
+	public void result_is(Integer expected) {
+		
+		if (Result==expected) {
+			scn.write("Result matched with expected");
+			Assert.assertTrue(true);
+		}else {
+			scn.write("Result did not matched with expected");
+			Assert.assertTrue(false);
+		}
+	   
+	}
+    
+}
